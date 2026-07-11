@@ -1,4 +1,3 @@
-
 *,
 *::before,
 *::after {
@@ -34,6 +33,15 @@ body{
 }
 main{
   padding-top: 64px;
+}
+.menu-button {
+  display: none;
+
+  border: none;
+  background: transparent;
+  color: #ffffff;
+
+  cursor: pointer;
 }
 .hero{
   min-height: calc(100vh -64px);
