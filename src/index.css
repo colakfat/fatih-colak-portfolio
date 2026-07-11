@@ -979,9 +979,6 @@ a{
     transform:translateY(-6px);
 
     border-color:#3B82F6;
-
-    box-shadow:
-        0 0 18px rgba(59,130,246,.15);
 }
 
 .contact-card h3{
@@ -1095,4 +1092,370 @@ a{
 
         grid-template-columns:1fr;
     }
+}
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 900px) {
+  .hero-content,
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-projects,
+  .about-right {
+    width: 100%;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  section {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  /* ---------------- HEADER ---------------- */
+
+  header .container,
+  .header-container {
+    min-height: 70px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  nav,
+  .nav-links {
+    display: none;
+  }
+
+  /* ---------------- HERO ---------------- */
+
+  .hero {
+    min-height: auto;
+    padding-top: 60px;
+  }
+
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .hero-text {
+    width: 100%;
+  }
+
+  .hero-greeting {
+    font-size: 16px;
+  }
+
+  .hero-title {
+    font-size: clamp(52px, 16vw, 72px);
+    line-height: 0.98;
+  }
+
+  .hero-role {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .hero-tags {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .hero-description {
+    max-width: 100%;
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .hero-buttons a {
+    flex: 1;
+    min-width: 135px;
+    text-align: center;
+  }
+
+  /* Hero proje kartı */
+
+  .hero-projects {
+    width: 100%;
+  }
+
+  .featured-project-card {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 24px;
+    padding: 18px;
+  }
+
+  .featured-project-image {
+    display: block;
+    width: 100%;
+  }
+
+  .featured-project-image img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+    border-radius: 12px;
+  }
+
+  .featured-project-content {
+    width: 100%;
+    padding: 4px;
+  }
+
+  /* ---------------- ORTAK BAŞLIKLAR ---------------- */
+
+  .section-heading {
+    margin-bottom: 45px;
+  }
+
+  .section-heading h2 {
+    font-size: 38px;
+    line-height: 1.15;
+  }
+
+  .section-description {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* ---------------- ABOUT ---------------- */
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .about-text {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .about-text h3 {
+    font-size: 28px;
+  }
+
+  .about-text p {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .about-right {
+    width: 100%;
+  }
+
+  .expertise-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .expertise-card {
+    width: 100%;
+    min-height: 230px;
+    padding: 28px 20px;
+  }
+
+  /* İstatistikler */
+
+  .about-stats {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stat-item {
+    min-height: 150px;
+    padding: 22px 10px;
+  }
+
+  .stat-item:nth-child(2) {
+    border-right: none;
+  }
+
+  .stat-item:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .stat-item h3 {
+    font-size: 34px;
+  }
+
+  /* ---------------- SKILLS ---------------- */
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .skill-card {
+    width: 100%;
+    min-height: auto;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    padding: 28px 22px;
+  }
+
+  .skill-card-icon {
+    padding: 0 0 24px;
+
+    border-right: none;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  }
+
+  .skill-card-content {
+    padding: 26px 0 0;
+  }
+
+  .skill-card-content h3 {
+    text-align: center;
+    font-size: 25px;
+  }
+
+  .skill-card-content h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .skill-card-content ul {
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .technology-stack {
+    width: 100%;
+    padding: 24px 18px;
+  }
+
+  .technology-tags {
+    gap: 10px;
+  }
+
+  .technology-tags span {
+    padding: 9px 13px;
+    font-size: 13px;
+  }
+
+  /* ---------------- PROJECTS ---------------- */
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-info-card {
+    width: 100%;
+    min-height: auto;
+    padding: 26px 22px;
+  }
+
+  .project-info-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .project-title h3 {
+    font-size: 23px;
+  }
+
+  .project-description {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  /* ---------------- CONTACT ---------------- */
+
+  .contact-cards {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .contact-card {
+    width: 100%;
+    min-height: 190px;
+    padding: 28px 20px;
+  }
+
+  .contact-button {
+    margin-top: 50px;
+  }
+
+  .contact-button a {
+    width: 100%;
+    max-width: 330px;
+    text-align: center;
+  }
+
+  .footer {
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 52px;
+  }
+
+  .hero-role {
+    font-size: 25px;
+  }
+
+  .section-heading h2 {
+    font-size: 34px;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .stat-item:last-child {
+    border-bottom: none;
+  }
 }
