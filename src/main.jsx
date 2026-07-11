@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import {
+  Cpu,
   Car,
   Monitor,
   RadioTower,
@@ -14,7 +15,8 @@ import {
   ExternalLink,
   LockKeyhole,
 } from "lucide-react";
-
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 import {
   FaEnvelope,
   FaLinkedin,
