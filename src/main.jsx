@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import {
-  Cpu,
   Car,
   Monitor,
   RadioTower,
@@ -15,6 +14,7 @@ import {
   ExternalLink,
   LockKeyhole,
 } from "lucide-react";
+
 import {
   FaEnvelope,
   FaLinkedin,
@@ -101,8 +101,6 @@ function Contact() {
     </section>
   );
 }
-
-export default Contact;
 
 function Projects() {
   const projects = [
@@ -378,45 +376,51 @@ function Skills() {
 }
 
 
+
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const closeMenu = () => {
+  function toggleMenu() {
+    setMenuOpen((previousValue) => !previousValue);
+  }
+
+  function closeMenu() {
     setMenuOpen(false);
-  };
+  }
 
   return (
     <header className="header">
       <div className="container header-container">
-
         <a href="#home" className="logo" onClick={closeMenu}>
           Fatih <span>Çolak</span>
         </a>
 
         <button
-          className="menu-button"
           type="button"
-          aria-label={menuOpen ? "Menüyü kapat" : "Menüyü aç"}
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((current) => !current)}
+          className="menu-button"
+          onClick={toggleMenu}
+          style={{
+            background: "red",
+            color: "white",
+            width: "44px",
+            height: "44px"
+          }}
         >
-          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+          ☰
         </button>
 
-        <nav className={`navbar ${menuOpen ? "navbar-open" : ""}`}>
+        <nav className={menuOpen ? "navbar navbar-open" : "navbar"}>
           <a href="#home" onClick={closeMenu}>Ana Sayfa</a>
           <a href="#about" onClick={closeMenu}>Hakkımda</a>
           <a href="#skills" onClick={closeMenu}>Yetenekler</a>
           <a href="#projects" onClick={closeMenu}>Projeler</a>
           <a href="#contact" onClick={closeMenu}>İletişim</a>
         </nav>
-
       </div>
     </header>
   );
 }
 
-export default Header;
 
 function Hero(){
   return (
