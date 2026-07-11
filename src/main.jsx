@@ -102,6 +102,8 @@ function Contact() {
   );
 }
 
+export default Contact;
+
 function Projects() {
   const projects = [
     {
@@ -399,14 +401,10 @@ function Header() {
           type="button"
           className="menu-button"
           onClick={toggleMenu}
-          style={{
-            background: "red",
-            color: "white",
-            width: "44px",
-            height: "44px"
-          }}
+          aria-label="Menüyü aç veya kapat"
+          aria-expanded={menuOpen}
         >
-          ☰
+          {menuOpen ? "✕" : "☰"}
         </button>
 
         <nav className={menuOpen ? "navbar navbar-open" : "navbar"}>
@@ -421,6 +419,7 @@ function Header() {
   );
 }
 
+export default Header;
 
 function Hero(){
   return (
