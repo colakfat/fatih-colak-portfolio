@@ -102,8 +102,6 @@ function Contact() {
   );
 }
 
-export default Contact;
-
 function Projects() {
   const projects = [
     {
@@ -423,7 +421,6 @@ function Header() {
   );
 }
 
-export default Header;
 
 function Hero(){
   return (
