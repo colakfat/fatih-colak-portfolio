@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import {
-  Cpu,
   Car,
   Monitor,
   RadioTower,
@@ -15,8 +14,6 @@ import {
   ExternalLink,
   LockKeyhole,
 } from "lucide-react";
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
 
 import {
   FaEnvelope,
@@ -404,10 +401,14 @@ function Header() {
           type="button"
           className="menu-button"
           onClick={toggleMenu}
-          aria-label="Menüyü aç veya kapat"
-          aria-expanded={menuOpen}
+          style={{
+            background: "red",
+            color: "white",
+            width: "44px",
+            height: "44px"
+          }}
         >
-          {menuOpen ? "✕" : "☰"}
+          ☰
         </button>
 
         <nav className={menuOpen ? "navbar navbar-open" : "navbar"}>
