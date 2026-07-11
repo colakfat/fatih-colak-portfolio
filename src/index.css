@@ -5,6 +5,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+.navbar.navbar-open {
+  display: flex !important;
+}
 body{
 
     background:
