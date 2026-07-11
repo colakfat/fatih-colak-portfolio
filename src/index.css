@@ -1,7 +1,10 @@
 
-*{
-    margin:0;
-    padding:0;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body{
 
@@ -1101,14 +1104,10 @@ a{
   }
 
   .container {
-    width: calc(100% - 32px);
-    max-width: calc(100% - 32px);
-
-    margin: 0 auto;
-
-    padding: 0 16px;
-
-    box-sizing: border-box;
+    width: calc(100% - 32px) !important;
+    max-width: calc(100% - 32px) !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
   }
 
   /* HEADER */
@@ -1431,5 +1430,62 @@ html {
 
   .navbar {
     display: none !important;
+  }
+  .skills,
+  .projects,
+  .contact {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .skills-grid,
+  .projects-grid,
+  .contact-cards {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .skill-card,
+  .project-info-card,
+  .contact-card,
+  .technology-stack {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .skill-card-content,
+  .project-info-header,
+  .project-description,
+  .project-technologies,
+  .project-links {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .section-heading h2 {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: clamp(32px, 9vw, 42px) !important;
+    line-height: 1.15;
+
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+  }
+
+  .section-description {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 6px;
+  }
+
+  .project-description {
+    overflow-wrap: anywhere;
   }
 }
