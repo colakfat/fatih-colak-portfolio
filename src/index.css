@@ -1431,7 +1431,7 @@ html {
   .navbar {
     display: none !important;
   }
-  skills,
+  .skills,
   .projects,
   .contact {
     width: 100%;
