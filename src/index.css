@@ -1118,318 +1118,159 @@ a{
    MOBILE
 ================================================== */
 
-@media (max-width: 600px) {
-  html,
-  body {
-    width: 100%;
-    overflow-x: hidden;
-  }
+@media (max-width: 768px) {
 
   .container {
     width: 100%;
     max-width: 100%;
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
   }
 
-  section {
-    padding-top: 75px;
-    padding-bottom: 75px;
-  }
-
-  /* ---------------- HEADER ---------------- */
-
-  header .container,
-  .header-container {
-    min-height: 70px;
-  }
-
-  .logo {
-    font-size: 20px;
-  }
-
-  nav,
-  .nav-links {
-    display: none;
-  }
-
-  /* ---------------- HERO ---------------- */
-
-  .hero {
-    min-height: auto;
-    padding-top: 60px;
-  }
+  /* HERO */
 
   .hero-content {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-
-  .hero-text {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 45px;
     width: 100%;
   }
 
-  .hero-greeting {
-    font-size: 16px;
-  }
-
-  .hero-title {
-    font-size: clamp(52px, 16vw, 72px);
-    line-height: 0.98;
-  }
-
-  .hero-role {
-    font-size: 28px;
-    line-height: 1.2;
-  }
-
-  .hero-tags {
-    font-size: 15px;
-    line-height: 1.6;
-  }
-
-  .hero-description {
-    max-width: 100%;
-    font-size: 17px;
-    line-height: 1.75;
-  }
-
-  .hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-  }
-
-  .hero-buttons a {
-    flex: 1;
-    min-width: 135px;
-    text-align: center;
-  }
-
-  /* Hero proje kartı */
-
+  .hero-text,
   .hero-projects {
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
 
   .featured-project-card {
-    width: 100%;
-
     display: grid;
-    grid-template-columns: 1fr;
-
-    gap: 24px;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     padding: 18px;
+    gap: 24px;
   }
 
-  .featured-project-image {
-    display: block;
+  .featured-project-image,
+  .featured-project-content {
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
 
   .featured-project-image img {
-    display: block;
-
     width: 100%;
+    max-width: 100%;
     height: auto;
-
     object-fit: contain;
-    border-radius: 12px;
   }
 
-  .featured-project-content {
-    width: 100%;
-    padding: 4px;
-  }
-
-  /* ---------------- ORTAK BAŞLIKLAR ---------------- */
-
-  .section-heading {
-    margin-bottom: 45px;
-  }
-
-  .section-heading h2 {
-    font-size: 38px;
-    line-height: 1.15;
-  }
-
-  .section-description {
-    font-size: 16px;
-    line-height: 1.7;
-  }
-
-  /* ---------------- ABOUT ---------------- */
+  /* ABOUT */
 
   .about-content {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 45px;
-  }
-
-  .about-text {
+    grid-template-columns: minmax(0, 1fr);
     width: 100%;
-    padding-top: 0;
+    gap: 40px;
   }
 
-  .about-text h3 {
-    font-size: 28px;
-  }
-
-  .about-text p {
-    font-size: 16px;
-    line-height: 1.75;
-  }
-
+  .about-text,
   .about-right {
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
 
   .expertise-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
   }
 
   .expertise-card {
     width: 100%;
-    min-height: 230px;
-    padding: 28px 20px;
+    max-width: 100%;
+    min-width: 0;
   }
 
-  /* İstatistikler */
+  /* İSTATİSTİKLER */
 
   .about-stats {
     width: 100%;
+    max-width: 100%;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .stat-item {
-    min-height: 150px;
-    padding: 22px 10px;
+    width: 100%;
+    min-width: 0;
   }
 
-  .stat-item:nth-child(2) {
-    border-right: none;
-  }
-
-  .stat-item:nth-child(-n + 2) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .stat-item h3 {
-    font-size: 34px;
-  }
-
-  /* ---------------- SKILLS ---------------- */
+  /* SKILLS */
 
   .skills-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
   }
 
   .skill-card {
     width: 100%;
-    min-height: auto;
-
-    display: grid;
-    grid-template-columns: 1fr;
-
-    padding: 28px 22px;
-  }
-
-  .skill-card-icon {
-    padding: 0 0 24px;
-
-    border-right: none;
-    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
-  }
-
-  .skill-card-content {
-    padding: 26px 0 0;
-  }
-
-  .skill-card-content h3 {
-    text-align: center;
-    font-size: 25px;
-  }
-
-  .skill-card-content h3::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .skill-card-content ul {
-    width: fit-content;
-    margin: 0 auto;
+    max-width: 100%;
+    min-width: 0;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .technology-stack {
     width: 100%;
-    padding: 24px 18px;
+    max-width: 100%;
+    min-width: 0;
   }
 
-  .technology-tags {
-    gap: 10px;
-  }
-
-  .technology-tags span {
-    padding: 9px 13px;
-    font-size: 13px;
-  }
-
-  /* ---------------- PROJECTS ---------------- */
+  /* PROJECTS */
 
   .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
   }
 
   .project-info-card {
     width: 100%;
-    min-height: auto;
-    padding: 26px 22px;
+    max-width: 100%;
+    min-width: 0;
   }
 
-  .project-info-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-  }
-
-  .project-title h3 {
-    font-size: 23px;
-  }
-
-  .project-description {
-    font-size: 16px;
-    line-height: 1.75;
-  }
-
-  /* ---------------- CONTACT ---------------- */
+  /* CONTACT */
 
   .contact-cards {
-    grid-template-columns: 1fr;
-    gap: 18px;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
   }
 
   .contact-card {
     width: 100%;
-    min-height: 190px;
-    padding: 28px 20px;
+    max-width: 100%;
+    min-width: 0;
   }
 
-  .contact-button {
-    margin-top: 50px;
-  }
+  /* BAŞLIKLAR */
 
-  .contact-button a {
+  .section-heading {
     width: 100%;
-    max-width: 330px;
-    text-align: center;
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
-  .footer {
-    margin-top: 70px;
+  .section-heading h2 {
+    font-size: clamp(34px, 10vw, 48px);
+    overflow-wrap: anywhere;
+  }
+
+  .section-description {
+    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -1457,5 +1298,37 @@ a{
 
   .stat-item:last-child {
     border-bottom: none;
+  }
+}
+
+/* Tüm elemanların genişlik hesabını düzeltir */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .header-container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
