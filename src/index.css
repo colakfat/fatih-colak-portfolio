@@ -1100,8 +1100,7 @@ a{
     overflow-x: hidden;
   }
 
-.container {
-.container {
+  .container {
     width: calc(100% - 32px);
     max-width: calc(100% - 32px);
 
@@ -1110,7 +1109,7 @@ a{
     padding: 0 16px;
 
     box-sizing: border-box;
-}
+  }
 
   /* HEADER */
 
