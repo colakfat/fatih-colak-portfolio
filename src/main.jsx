@@ -376,24 +376,47 @@ function Skills() {
     </section>
   );
 }
+
+
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <header className="header">
       <div className="container header-container">
 
-        <a href="/" className="logo"> Fatih <span>Çolak</span></a>
+        <a href="#home" className="logo" onClick={closeMenu}>
+          Fatih <span>Çolak</span>
+        </a>
 
-        <nav className="navbar">
-          <a href="#home">Ana Sayfa</a>
-          <a href="#about">Hakkımda</a>
-          <a href="#skills">Yetenekler</a>
-          <a href="#projects">Projeler</a>
-          <a href="#contact">İletişim</a>
+        <button
+          className="menu-button"
+          type="button"
+          aria-label={menuOpen ? "Menüyü kapat" : "Menüyü aç"}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((current) => !current)}
+        >
+          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+
+        <nav className={`navbar ${menuOpen ? "navbar-open" : ""}`}>
+          <a href="#home" onClick={closeMenu}>Ana Sayfa</a>
+          <a href="#about" onClick={closeMenu}>Hakkımda</a>
+          <a href="#skills" onClick={closeMenu}>Yetenekler</a>
+          <a href="#projects" onClick={closeMenu}>Projeler</a>
+          <a href="#contact" onClick={closeMenu}>İletişim</a>
         </nav>
+
       </div>
     </header>
   );
 }
+
+export default Header;
 
 function Hero(){
   return (
