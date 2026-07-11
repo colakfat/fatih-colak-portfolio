@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import {
+  Cpu,
   Car,
   Monitor,
   RadioTower,
@@ -14,7 +15,6 @@ import {
   ExternalLink,
   LockKeyhole,
 } from "lucide-react";
-
 import {
   FaEnvelope,
   FaLinkedin,
@@ -101,6 +101,8 @@ function Contact() {
     </section>
   );
 }
+
+export default Contact;
 
 function Projects() {
   const projects = [
@@ -374,53 +376,24 @@ function Skills() {
     </section>
   );
 }
-
-
-
 function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  function toggleMenu() {
-    setMenuOpen((previousValue) => !previousValue);
-  }
-
-  function closeMenu() {
-    setMenuOpen(false);
-  }
-
   return (
     <header className="header">
       <div className="container header-container">
-        <a href="#home" className="logo" onClick={closeMenu}>
-          Fatih <span>Çolak</span>
-        </a>
 
-        <button
-          type="button"
-          className="menu-button"
-          onClick={toggleMenu}
-          style={{
-            background: "red",
-            color: "white",
-            width: "44px",
-            height: "44px"
-          }}
-        >
-          ☰
-        </button>
+        <a href="/" className="logo"> Fatih <span>Çolak</span></a>
 
-        <nav className={menuOpen ? "navbar navbar-open" : "navbar"}>
-          <a href="#home" onClick={closeMenu}>Ana Sayfa</a>
-          <a href="#about" onClick={closeMenu}>Hakkımda</a>
-          <a href="#skills" onClick={closeMenu}>Yetenekler</a>
-          <a href="#projects" onClick={closeMenu}>Projeler</a>
-          <a href="#contact" onClick={closeMenu}>İletişim</a>
+        <nav className="navbar">
+          <a href="#home">Ana Sayfa</a>
+          <a href="#about">Hakkımda</a>
+          <a href="#skills">Yetenekler</a>
+          <a href="#projects">Projeler</a>
+          <a href="#contact">İletişim</a>
         </nav>
       </div>
     </header>
   );
 }
-
 
 function Hero(){
   return (
