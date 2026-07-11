@@ -36,11 +36,9 @@ main{
 }
 .menu-button {
   display: none;
-
   border: none;
   background: transparent;
   color: #ffffff;
-
   cursor: pointer;
 }
 .hero{
