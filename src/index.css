@@ -36,10 +36,11 @@ main{
 }
 .menu-button {
   display: none;
-  padding: 0;
-  border: 0;
+
+  border: none;
   background: transparent;
   color: #ffffff;
+
   cursor: pointer;
 }
 .hero{
@@ -1147,88 +1148,8 @@ html {
     font-size: 20px;
   }
 
-  .header {
-    height: 72px;
-  }
-
-  .header-container {
-    position: relative;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    width: calc(100% - 32px) !important;
-    max-width: calc(100% - 32px) !important;
-
-    margin: 0 auto;
-    padding: 0 !important;
-  }
-
-  .logo {
-    font-size: 21px;
-    white-space: nowrap;
-  }
-
-  .menu-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    position: relative;
-    z-index: 1101;
-
-    width: 44px;
-    height: 44px;
-  }
-
   .navbar {
-    display: none;
-
-    position: absolute;
-    top: 72px;
-    left: 0;
-    right: 0;
-
-    width: 100%;
-
-    padding: 18px;
-
-    flex-direction: column;
-    align-items: stretch;
-    gap: 6px;
-
-    background: #070c15;
-
-    border: 1px solid rgba(59, 130, 246, 0.3);
-    border-radius: 14px;
-
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
-  }
-
-  .navbar.navbar-open {
-    display: flex;
-  }
-
-  .navbar a {
-    display: block;
-
-    width: 100%;
-
-    padding: 13px 14px;
-
-    border-radius: 8px;
-
-    font-size: 16px;
-  }
-
-  .navbar a:hover {
-    background: rgba(59, 130, 246, 0.1);
-    transform: none;
-  }
-
-  .navbar a::after {
-    display: none;
+    display: none !important;
   }
 
   /* ORTAK GENİŞLİK AYARLARI */
