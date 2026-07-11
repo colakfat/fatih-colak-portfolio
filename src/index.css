@@ -1089,35 +1089,24 @@ a{
 
     transform:scale(1.08);
 }
+
 /* ==================================================
-   MOBILE RESPONSIVE
+   MOBILE FIX
 ================================================== */
 
-html {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-
 @media screen and (max-width: 768px) {
-
   html,
   body,
   #root {
     width: 100%;
     max-width: 100%;
-    margin: 0;
     overflow-x: hidden;
   }
-
-  /* GENEL CONTAINER */
 
   .container {
     width: calc(100% - 32px) !important;
     max-width: calc(100% - 32px) !important;
-
-    margin-left: auto !important;
-    margin-right: auto !important;
-
+    margin: 0 auto !important;
     padding: 0 !important;
   }
 
@@ -1128,46 +1117,18 @@ html {
   }
 
   .header-container {
-    width: calc(100% - 32px) !important;
-    max-width: calc(100% - 32px) !important;
-
-    margin: 0 auto;
-
-    padding: 0 !important;
+    width: 100%;
+    padding-left: 18px;
+    padding-right: 18px;
   }
 
   .logo {
     font-size: 20px;
   }
 
+  /* Sınıfın nav-links değil navbar */
   .navbar {
-    display: none !important;
-  }
-
-  /* ORTAK GENİŞLİK AYARLARI */
-
-  .hero-container,
-  .hero-content,
-  .about-content,
-  .about-text,
-  .about-right,
-  .expertise-grid,
-  .about-stats,
-  .skills-grid,
-  .skill-card,
-  .skill-card-content,
-  .technology-stack,
-  .projects-grid,
-  .project-info-card,
-  .project-info-header,
-  .project-description,
-  .project-technologies,
-  .project-links,
-  .contact-cards,
-  .contact-card {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
+    display: none;
   }
 
   /* HERO */
@@ -1178,42 +1139,34 @@ html {
     padding-bottom: 70px;
   }
 
+  /* Asıl iki sütunlu yapı bu */
   .hero-container {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 42px;
 
-    gap: 42px !important;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
 
   .hero-content {
-    align-items: flex-start;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
 
   .hero-title {
-    width: 100%;
-    max-width: 100%;
-
-    font-size: clamp(50px, 15vw, 68px) !important;
-    line-height: 0.98;
-
-    white-space: normal;
-    overflow-wrap: break-word;
+    font-size: clamp(52px, 16vw, 72px);
+    line-height: 0.95;
   }
 
   .hero-subtitle {
-    width: 100%;
-    max-width: 100%;
-
-    font-size: 27px !important;
+    font-size: 27px;
     line-height: 1.2;
-
-    white-space: normal;
   }
 
   .hero-tech {
-    width: 100%;
-    max-width: 100%;
-
     font-size: 15px;
     line-height: 1.6;
   }
@@ -1224,31 +1177,156 @@ html {
 
     font-size: 16px;
     line-height: 1.75;
-
-    overflow-wrap: break-word;
   }
 
   .hero-buttons {
-    width: 100%;
-
     display: flex;
     flex-wrap: wrap;
-
     gap: 12px;
   }
 
   .primary-button,
   .secondary-button {
     flex: 1;
-
     min-width: 135px;
-
-    padding: 14px 16px;
-
-    text-align: center;
   }
 
-  /* HERO PROJE KARTI */
+  /* FEATURED PROJECT */
+
+  .featured-project-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    padding: 18px;
+    gap: 20px;
+  }
+
+  .featured-project-image,
+  .featured-project-content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    padding: 10px;
+  }
+
+  .featured-project-image img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* ABOUT */
+
+  .about-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 42px;
+  }
+
+  .expertise-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* SKILLS */
+
+  .skills-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .skill-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* PROJECTS */
+
+  .projects-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* CONTACT */
+
+  .contact-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 768px){
+
+    .hero-container{
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================================
+   MOBILE OVERFLOW FINAL FIX
+========================================= */
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  html,
+  body,
+  #root {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  /*
+    width: 100% + padding yerine ekran genişliğinden
+    sağ-sol boşluk çıkarıyoruz.
+  */
+  .container {
+    width: calc(100% - 32px) !important;
+    max-width: calc(100% - 32px) !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .hero-container,
+  .hero-content,
+  .about-content,
+  .about-text,
+  .about-right,
+  .expertise-grid,
+  .about-stats,
+  .skills-grid,
+  .skill-card,
+  .technology-stack,
+  .projects-grid,
+  .project-info-card,
+  .contact-cards,
+  .contact-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* HERO */
+
+  .hero-container {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 40px !important;
+  }
 
   .featured-project-card {
     display: grid !important;
@@ -1259,7 +1337,6 @@ html {
     min-width: 0 !important;
 
     padding: 16px !important;
-    gap: 20px !important;
   }
 
   .featured-project-image,
@@ -1273,227 +1350,122 @@ html {
 
   .featured-project-image img {
     display: block;
-
     width: 100% !important;
-    max-width: 100% !important;
     height: auto;
   }
 
   /* ABOUT */
 
-  .about {
-    padding: 80px 0;
-  }
-
   .about-content {
-    display: grid;
     grid-template-columns: minmax(0, 1fr) !important;
-
-    gap: 42px;
   }
 
   .expertise-grid {
     grid-template-columns: minmax(0, 1fr) !important;
   }
 
-  .about-stats {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-
   /* SKILLS */
-
-  .skills {
-    width: 100%;
-    max-width: 100%;
-
-    padding: 80px 0;
-
-    overflow-x: hidden;
-  }
 
   .skills-grid {
     grid-template-columns: minmax(0, 1fr) !important;
   }
 
   .skill-card {
-    display: grid;
     grid-template-columns: minmax(0, 1fr) !important;
-
-    min-height: auto;
-
-    padding: 24px 18px;
-
-    text-align: center;
-  }
-
-  .skill-card-icon {
-    padding: 0 0 22px;
-
-    border-right: none;
-    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
-  }
-
-  .skill-card-content {
-    padding: 24px 0 0;
-  }
-
-  .skill-card-content h3 {
-    width: 100%;
-    max-width: 100%;
-
-    font-size: 24px;
-
-    white-space: normal;
-    overflow-wrap: break-word;
-  }
-
-  .skill-card-content h3::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .skill-card-content ul {
-    width: fit-content;
-    max-width: 100%;
-
-    margin: 0 auto;
-
-    text-align: left;
-  }
-
-  .technology-stack {
-    padding: 20px 16px;
-  }
-
-  .technology-tags {
-    width: 100%;
-
-    gap: 10px;
-  }
-
-  .technology-tags span {
-    max-width: 100%;
-
-    padding: 9px 12px;
-
-    font-size: 13px;
-
-    overflow-wrap: anywhere;
   }
 
   /* PROJECTS */
-
-  .projects {
-    width: 100%;
-    max-width: 100%;
-
-    padding: 80px 0;
-
-    overflow-x: hidden;
-  }
 
   .projects-grid {
     grid-template-columns: minmax(0, 1fr) !important;
   }
 
-  .project-info-card {
-    min-height: auto;
-
-    padding: 24px 18px;
-  }
-
   .project-info-header {
     flex-direction: column;
     align-items: flex-start;
-
-    gap: 14px;
-  }
-
-  .project-title {
-    width: 100%;
-    min-width: 0;
-  }
-
-  .project-title h3 {
-    width: 100%;
-    max-width: 100%;
-
-    font-size: 22px !important;
-
-    white-space: normal;
-    overflow-wrap: anywhere;
-  }
-
-  .project-description {
-    font-size: 16px;
-    line-height: 1.7;
-
-    overflow-wrap: anywhere;
-  }
-
-  .project-technologies {
-    gap: 8px;
-  }
-
-  .project-technologies span {
-    max-width: 100%;
-
-    overflow-wrap: anywhere;
   }
 
   /* CONTACT */
 
+  .contact-cards {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  /* Uzun başlıkların ekran dışına çıkmasını önler */
+
+  .section-heading,
+  .section-heading h2,
+  .section-heading p,
+  .section-description,
+  .hero-title,
+  .hero-subtitle,
+  .about-text h3,
+  .project-title h3 {
+    width: 100%;
+    max-width: 100%;
+
+    white-space: normal !important;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(32px, 9vw, 42px) !important;
+    line-height: 1.15;
+  }
+
+  .hero-title {
+    font-size: clamp(50px, 15vw, 68px) !important;
+  }
+
+  .hero-subtitle {
+    font-size: 27px !important;
+  }
+
+  .project-title h3 {
+    font-size: 22px !important;
+  }
+
+  /* Navbar mobilde gizlensin */
+
+  .navbar {
+    display: none !important;
+  }
+  .skills,
+  .projects,
   .contact {
     width: 100%;
     max-width: 100%;
-
-    padding: 80px 0;
-
     overflow-x: hidden;
   }
 
+  .skills-grid,
+  .projects-grid,
   .contact-cards {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+
     grid-template-columns: minmax(0, 1fr) !important;
-
-    gap: 20px;
   }
 
-  .contact-card {
-    padding: 28px 18px;
-
-    overflow-wrap: anywhere;
+  .skill-card,
+  .project-info-card,
+  .contact-card,
+  .technology-stack {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
   }
 
-  .contact-card span {
+  .skill-card-content,
+  .project-info-header,
+  .project-description,
+  .project-technologies,
+  .project-links {
     width: 100%;
     max-width: 100%;
-
-    overflow-wrap: anywhere;
-    word-break: break-word;
-  }
-
-  .contact-button {
-    width: 100%;
-
-    margin-top: 50px;
-  }
-
-  .contact-button a {
-    width: 100%;
-    max-width: 330px;
-
-    padding: 16px 20px;
-
-    text-align: center;
-  }
-
-  /* ORTAK BAŞLIKLAR */
-
-  .section-heading {
-    width: 100%;
-    max-width: 100%;
-
-    padding: 0 4px;
+    min-width: 0;
   }
 
   .section-heading h2 {
@@ -1507,58 +1479,13 @@ html {
     overflow-wrap: anywhere;
   }
 
-  .section-heading p {
-    width: 100%;
-    max-width: 100%;
-  }
-
   .section-description {
     width: 100%;
     max-width: 100%;
-
     padding: 0 6px;
-
-    font-size: 16px;
-    line-height: 1.7;
-
-    overflow-wrap: break-word;
-  }
-}
-
-/* ==================================================
-   SMALL MOBILE
-================================================== */
-
-@media screen and (max-width: 420px) {
-
-  .container {
-    width: calc(100% - 24px) !important;
-    max-width: calc(100% - 24px) !important;
   }
 
-  .header-container {
-    width: calc(100% - 24px) !important;
-    max-width: calc(100% - 24px) !important;
-  }
-
-  .hero-title {
-    font-size: 50px !important;
-  }
-
-  .hero-subtitle {
-    font-size: 24px !important;
-  }
-
-  .about-stats {
-    grid-template-columns: minmax(0, 1fr) !important;
-  }
-
-  .stat-item {
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .stat-item:last-child {
-    border-bottom: none;
+  .project-description {
+    overflow-wrap: anywhere;
   }
 }
