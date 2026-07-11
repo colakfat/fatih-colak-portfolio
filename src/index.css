@@ -1131,16 +1131,19 @@ html {
     padding: 0 !important;
   }
 
+  /* HEADER */
+
   .header {
     height: 72px;
-    overflow: visible;
   }
 
   .header-container {
     position: relative;
+
     width: calc(100% - 32px) !important;
     max-width: calc(100% - 32px) !important;
-    height: 72px;
+    height: 100%;
+
     margin: 0 auto !important;
     padding: 0 !important;
 
@@ -1150,6 +1153,7 @@ html {
   }
 
   .logo {
+    flex-shrink: 0;
     font-size: 21px;
     white-space: nowrap;
   }
@@ -1162,39 +1166,34 @@ html {
     width: 44px;
     height: 44px;
 
-    padding: 0;
-    border: 1px solid rgba(59, 130, 246, 0.5);
-    border-radius: 9px;
-
-    background: transparent;
-    color: #ffffff;
-
-    font-size: 27px;
-    line-height: 1;
-
-    cursor: pointer;
-    z-index: 2001;
+    position: relative;
+    z-index: 1201;
   }
 
   .navbar {
     display: none !important;
 
     position: absolute;
-    top: 64px;
+    top: 72px;
     left: 0;
     right: 0;
 
     width: 100%;
-    padding: 12px;
+    max-width: 100%;
 
-    background: #070c15;
-    border: 1px solid rgba(59, 130, 246, 0.4);
-    border-radius: 12px;
+    padding: 14px;
 
     flex-direction: column;
-    gap: 5px;
+    align-items: stretch;
+    gap: 6px;
 
-    z-index: 2000;
+    background-color: #070c15;
+    border: 1px solid rgba(59, 130, 246, 0.35);
+    border-radius: 12px;
+
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.4);
+
+    z-index: 1200;
   }
 
   .navbar.navbar-open {
@@ -1202,18 +1201,18 @@ html {
   }
 
   .navbar a {
-    display: block;
     width: 100%;
     padding: 13px 14px;
 
-    color: #ffffff;
+    font-size: 16px;
     text-align: left;
-    border-radius: 7px;
+
+    border-radius: 8px;
   }
 
   .navbar a:hover {
     color: #3b82f6;
-    background: rgba(59, 130, 246, 0.1);
+    background-color: rgba(59, 130, 246, 0.1);
     transform: none;
   }
 
