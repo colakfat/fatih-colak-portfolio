@@ -380,42 +380,39 @@ function Skills() {
 }
 
 
-
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  function toggleMenu() {
-    setMenuOpen((previousValue) => !previousValue);
-  }
-
-  function closeMenu() {
+  const closeMenu = () => {
     setMenuOpen(false);
-  }
+  };
 
   return (
     <header className="header">
       <div className="container header-container">
+
         <a href="#home" className="logo" onClick={closeMenu}>
           Fatih <span>Çolak</span>
         </a>
 
         <button
-          type="button"
           className="menu-button"
-          onClick={toggleMenu}
-          aria-label="Menüyü aç veya kapat"
+          type="button"
+          aria-label={menuOpen ? "Menüyü kapat" : "Menüyü aç"}
           aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((current) => !current)}
         >
-          {menuOpen ? "✕" : "☰"}
+          {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
-        <nav className={menuOpen ? "navbar navbar-open" : "navbar"}>
+        <nav className={`navbar ${menuOpen ? "navbar-open" : ""}`}>
           <a href="#home" onClick={closeMenu}>Ana Sayfa</a>
           <a href="#about" onClick={closeMenu}>Hakkımda</a>
           <a href="#skills" onClick={closeMenu}>Yetenekler</a>
           <a href="#projects" onClick={closeMenu}>Projeler</a>
           <a href="#contact" onClick={closeMenu}>İletişim</a>
         </nav>
+
       </div>
     </header>
   );
